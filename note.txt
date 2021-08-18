@@ -8,3 +8,10 @@ lesson-5 Using Props in the Setup Function
 lesson-6 lifecycle hook in composition api
 
 
+Guide (11) Async Await
+======================
+lesson-1 fetching posts data with aync and await
+
+
+
+

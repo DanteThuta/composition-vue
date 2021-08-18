@@ -1,0 +1,20 @@
+{
+    "posts":[
+
+        {
+            "title": "post title 1" ,
+            "content": "Lorem ipsum dolor",
+            "id": 1
+        },
+        {
+             "title": "post title 2" ,
+             "content": " Ea iusto amet neque. ",
+             "id": 2
+        },
+        {
+            "title": "post title 3" ,
+            "content": " Ea iusto amet neque3. ",
+            "id": 3
+       }
+        ]
+}

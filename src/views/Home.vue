@@ -26,8 +26,16 @@
 
       {{name}}
     </div> -->
-    
-        <PostsList :posts="posts"></PostsList>
+    <div v-if="error">
+        {{error}}
+    </div>
+
+    <div v-if="posts.length > 0">
+      <PostsList :posts="posts"></PostsList>
+    </div>  
+    <div v-else>
+      Loading... 
+    </div>
     
 
   
@@ -85,16 +93,34 @@ export default {
   //       return name.includes(search.value);
   //     })
   //   })
-     
+
   // Lesson(5)
 
   setup(){
 
     // let showPosts = ref(true);
-    let posts = ref([
-      {"title": "post title 1" , "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo laudantium esse maiores molestiae ab iste a quis nesciunt labore iure minima, maxime facilis nisi error. Doloremque cum accusamus vero eius quasi excepturi exercitationem, sequi dignissimos? Ea iusto amet neque. Accusamus sed ad facere distinctio voluptate sunt omnis tempora odit consectetur, similique illo error porro, voluptatem quibusdam deleniti? Commodi, beatae, eos rem ducimus cum consequatur totam, velit blanditiis deserunt repellat quidem alias sapiente. Praesentium provident saepe reprehenderit impedit cupiditate qui quasi itaque alias vel repellendus? Sunt maiores dicta harum in alias id quibusdam, ullam blanditiis voluptates sit placeat officia. Rem, odit", "id": 1},
-      {"title": "post title 2" , "content": " Ea iusto amet neque. Accusamus sed ad facere distinctio voluptate sunt omnis tempora odit consectetur, similique illo error porro, voluptatem quibusdam deleniti? Commodi, beatae, eos rem ducimus cum consequatur totam, velit blanditiis deserunt repellat quidem alias sapiente.", "id": 2}
-    ]);
+    let posts = ref([]);
+    let error = ref("");
+    //New Async Function Methods
+    let load=async()=>{
+      try{
+          let response = await fetch("http://localhost:3000/posts")
+
+          if(response.status == 404){
+            throw new Error("not Found URL");
+          }
+
+          let datas = await response.json();
+          // console.log(datas);
+          posts.value = datas;
+      }catch(err){
+            // console.log(error.message);
+            error.value = err.message;
+      }
+      
+    }
+
+    load();
     // console.log(posts.value);
     //need to return to activate Composition API Methodd
     // return {person1,person2,changePer1,changePer2};

@@ -20,9 +20,9 @@ export default {
         // console.log(props.posts);
 
         //lifeCycle Methods
-        onMounted(()=>console.log("Mounted Component"));
-        onUnmounted(()=>console.log("Unmounted Component"));
-        onUpdated(()=>console.log("Updated Component"));
+        // onMounted(()=>console.log("Mounted Component"));
+        // onUnmounted(()=>console.log("Unmounted Component"));
+        // onUpdated(()=>console.log("Updated Component"));
     }
 }
 </script>
