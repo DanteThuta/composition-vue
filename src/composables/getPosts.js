@@ -22,7 +22,7 @@ let getPosts=()=>{
       
     }
 
-    return {posts,error,load};
+    return {posts,error,load}; //need return to provide Function at the others
 }
 
 export default getPosts;
