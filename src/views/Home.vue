@@ -48,6 +48,7 @@
                     
 <script>
 import PostsList from '../components/PostsList'
+import getPosts from '../composables/getPosts'
 import { computed, reactive, ref } from '@vue/reactivity';
 // @ is an alias to /src
 
@@ -99,33 +100,16 @@ export default {
   setup(){
 
     // let showPosts = ref(true);
-    let posts = ref([]);
-    let error = ref("");
-    //New Async Function Methods
-    let load=async()=>{
-      try{
-          let response = await fetch("http://localhost:3000/posts")
-
-          if(response.status == 404){
-            throw new Error("not Found URL");
-          }
-
-          let datas = await response.json();
-          // console.log(datas);
-          posts.value = datas;
-      }catch(err){
-            // console.log(error.message);
-            error.value = err.message;
-      }
-      
-    }
-
+    let {posts,error,load} = getPosts();// {posts,error,load} from composition Function
+    
     load();
+    return {posts};
+   
     // console.log(posts.value);
     //need to return to activate Composition API Methodd
     // return {person1,person2,changePer1,changePer2};
     // return {names,search,filteredNames};
-    return {posts};
+    
   }
 }
 </script>
