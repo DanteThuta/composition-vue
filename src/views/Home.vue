@@ -34,7 +34,7 @@
       <PostsList :posts="posts"></PostsList>
     </div>  
     <div v-else>
-      Loading... 
+      <Spinner></Spinner> 
     </div>
     
 
@@ -47,6 +47,7 @@
 </template>
                     
 <script>
+import Spinner from '../components/Spinner'
 import PostsList from '../components/PostsList'
 import getPosts from '../composables/getPosts'
 import { computed, reactive, ref } from '@vue/reactivity';
@@ -54,7 +55,8 @@ import { computed, reactive, ref } from '@vue/reactivity';
 
 
 export default {
-  components: { PostsList },
+  components: {
+    Spinner, PostsList },
   // Lesson (1)
 
   // setup(){

@@ -6,15 +6,17 @@
         <h3>{{post.content}}</h3>
     </div>
     <div v-else>
-        Loading....
+        <Spinner></Spinner>
     </div>
   
 </template>
 
 <script>
+import Spinner from '../components/Spinner'
 import getPost from '../composables/getPost'
 
 export default {
+  components: { Spinner },
     props: ["id"],
     setup(props){
         let {post,error,load} = getPost(props.id);// require carry id from props

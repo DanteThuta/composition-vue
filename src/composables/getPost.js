@@ -6,6 +6,12 @@ let getPost=(id)=>{
 
     let load=async()=>{
         try{
+
+             //to Perform the Loading before Fetching Process
+            await new Promise((resolve,reject)=>{
+            setTimeout(resolve,1500);
+             })
+
             //fetching a Single Data (with Id)
             let response = await fetch("http://localhost:3000/posts/" + id);
 
