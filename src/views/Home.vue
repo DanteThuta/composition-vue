@@ -103,7 +103,7 @@ export default {
 
     // let showPosts = ref(true);
     let {posts,error,load} = getPosts();// {posts,error,load} from composition Function
-    
+     
     load();
     return {posts};
    
@@ -115,3 +115,11 @@ export default {
   }
 }
 </script>
+
+<style>
+  .home{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px  ;
+  }
+</style>

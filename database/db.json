@@ -1,20 +1,28 @@
 {
-    "posts":[
-
-        {
-            "title": "post title 1" ,
-            "content": "Lorem ipsum dolor",
-            "id": 1
-        },
-        {
-             "title": "post title 2" ,
-             "content": " Ea iusto amet neque. ",
-             "id": 2
-        },
-        {
-            "title": "post title 3" ,
-            "content": " Ea iusto amet neque3. ",
-            "id": 3
-       }
-        ]
+  "posts": [
+    {
+      "title": "project 1",
+      "content": "an individual or collaborative enterprise that is carefully planned to achieve a particular aim.",
+      "id": 1
+    },
+    {
+      "title": "project 2",
+      "content": " estimate or forecast (something) on the basis of present trends or data.. ",
+      "id": 2
+    },
+    {
+      "title": "project 3",
+      "content": " extend outwards beyond something else; protrude. ",
+      "id": 3
+    },
+    {
+      "title": "project 4 ",
+      "content": "a planned piece of work that has a specific purpose (such as to find information or to make)",
+      "tags": [
+        "html",
+        "php"
+      ],
+      "id": 4
+    }
+  ]
 }

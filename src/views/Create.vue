@@ -1,6 +1,8 @@
 <template>
   <h1>Create</h1>
-  <form>
+  <form @submit.prevent="addPost">
+
+    <h1>Create Form</h1>
     <label>Title</label>
     <input type="text" required v-model="title">
 
@@ -33,13 +35,31 @@ export default {
             tag.value = '';
         }
 
-        return {title,content,tag,tags,enableKeyDown};
+        let addPost=async()=>{
+            await fetch('http://localhost:3000/posts',{
+                method:"POST",
+                headers:{
+                    "Content-type" : "application/json"
+                },
+                body:JSON.stringify(
+                    {
+                        title:title.value,
+                        content: content.value,
+                        tags: tags.value //[]As Array
+                    }
+                )
+            })
+        }
+
+        return {title,content,tag,tags,enableKeyDown,addPost};
     }
 }
 </script>
 
 <style>
-
+    h1{
+        text-align: center;
+    }
     
     form{
         font-family: sans-serif;
@@ -54,7 +74,11 @@ export default {
         width: 100%;
         padding: 10px;
         box-sizing: border-box;
-        border: 1px solid #eee;
+        /* border: 1px solid #eee; */
+        border: 0;
+        background-color: transparent;
+        border-bottom: 1px solid #272727;
+        
     }
 
     textarea{
@@ -64,9 +88,13 @@ export default {
     label{
         display: inline-block;
         background-color: #ff8800;
-        
-        transform: rotate(2deg);
+        padding: 8px;
+        border-radius: 20px;
+        font-weight: bold;
+        /* transform: rotate(2deg); */
     }
+    
+    
     button{
         
         display: block;
@@ -79,6 +107,8 @@ export default {
         font-size: 18px;
 
         text-align: center;
+
+        cursor: pointer;
     }
 
     .pill{
