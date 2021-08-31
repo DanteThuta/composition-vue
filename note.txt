@@ -17,6 +17,12 @@ lesson-4 our loading spinner
 lesson-5 lesson create post frontend
 lesson-6 create post backend
 
+Guide (12) Routing in Composition api==========
+
+lesson-1 Navbar component and detail style
+lesson-2 useRouter and useRoute
+ffkf useRouter and useRoute detail
+lesson-3 creating a tag route 
 
 
 

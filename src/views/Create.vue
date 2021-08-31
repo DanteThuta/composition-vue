@@ -21,8 +21,10 @@
 
 <script>
 import { ref } from '@vue/reactivity'
+import {useRouter} from 'vue-router'
 export default {
     setup(){
+        let router = useRouter();
         let title = ref('');
         let content = ref('');
         let tag = ref('');
@@ -49,6 +51,8 @@ export default {
                     }
                 )
             })
+            // redirecting to Home Page
+            router.push("/");
         }
 
         return {title,content,tag,tags,enableKeyDown,addPost};
