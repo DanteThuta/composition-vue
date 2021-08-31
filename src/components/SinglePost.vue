@@ -66,4 +66,9 @@ export default {
         border-radius: 20px;
         font-size: 16px;
     }
+
+    .pill a{
+        text-decoration: none;
+        color: #444;
+    }
 </style>

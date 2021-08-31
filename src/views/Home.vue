@@ -30,8 +30,14 @@
         {{error}}
     </div>
 
-    <div v-if="posts.length > 0">
-      <PostsList :posts="posts"></PostsList>
+    <div v-if="posts.length > 0"  class="layout">
+      <div>
+          <PostsList :posts="posts"></PostsList>
+      </div>
+      <div>
+          <TagCloud :posts="posts"></TagCloud>
+      </div>
+     
     </div>  
     <div v-else>
       <Spinner></Spinner> 
@@ -47,6 +53,7 @@
 </template>
                     
 <script>
+import TagCloud from '../components/TagCloud'
 import Spinner from '../components/Spinner'
 import PostsList from '../components/PostsList'
 import getPosts from '../composables/getPosts'
@@ -56,6 +63,7 @@ import { computed, reactive, ref } from '@vue/reactivity';
 
 export default {
   components: {
+    TagCloud,
     Spinner, PostsList },
   // Lesson (1)
 
@@ -121,5 +129,11 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
     padding: 8px  ;
+  }
+
+  .layout{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
   }
 </style>
