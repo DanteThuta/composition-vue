@@ -17,7 +17,8 @@ lesson-4 our loading spinner
 lesson-5 lesson create post frontend
 lesson-6 create post backend
 
-Guide (12) Routing in Composition api==========
+Guide (12) Routing in Composition api
+==========
 
 lesson-1 Navbar component and detail style
 lesson-2 useRouter and useRoute
@@ -26,6 +27,12 @@ lesson-3 creating a tag route
 lesson-4 create our tagCloud component and style
 lesson-5 filter unique tags
 lesson-6 tag cloud unique links
+
+
+Guide (13) Setting up Firebase 
+===========================
+lesson-1 setup our firebase project
+lesson-2 Firestore Collections _ Documents
 
 
 

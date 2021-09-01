@@ -12,7 +12,7 @@ import { ref } from '@vue/reactivity'
 export default {
     props: ["posts"],
     setup(props){
-      let tags = ref([]);
+      let tags = ref([]);//creating new Array
       props.posts.forEach((post)=>{
         // console.log(post);
         post.tags.forEach((tag)=>{

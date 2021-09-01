@@ -20,6 +20,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  
+}
+
+body{
+  background-color: #f2f2f2; 
 }
 
 #nav {
