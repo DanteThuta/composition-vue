@@ -34,9 +34,9 @@ export default {
         load();
         
         let deletePost=async()=>{
-            let id = props.id;
+            let id = props.id; //creating variable to take id from PROPS
             // console.log(id);
-            await db.collection("posts").doc(id).delete();
+            await db.collection("posts").doc(id).delete(); //await required to perfrom at a Later Time
             router.push("/");
         }
 

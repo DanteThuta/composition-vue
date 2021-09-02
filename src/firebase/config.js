@@ -15,5 +15,7 @@ const firebaseConfig = {
 
   //setting up Database
   let db = firebase.firestore();
+  //to use timestamp FORMAT from Firebase
+  let timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-  export {db};
+  export {db,timestamp};

@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import { db } from "../firebase/config"
+import { db,timestamp } from "../firebase/config"
 
 let getPosts=()=>{
     let posts = ref([]);
@@ -9,7 +9,7 @@ let getPosts=()=>{
       try{
 
       //Fetching Records from Firebase Server
-      let res =  await db.collection("posts").get()
+      let res =  await db.collection("posts").orderBy("created_at","desc").get()
       
       //to put Firebase Records into arrays
        posts.value = res.docs.map((doc)=>{
