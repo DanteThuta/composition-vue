@@ -22,6 +22,7 @@
 <script>
 import { ref } from '@vue/reactivity'
 import {useRouter} from 'vue-router'
+import {db} from '../firebase/config'
 export default {
     setup(){
         let router = useRouter();
@@ -36,23 +37,36 @@ export default {
             }
             tag.value = '';
         }
+        
 
         let addPost=async()=>{
-            await fetch('http://localhost:3000/posts',{
-                method:"POST",
-                headers:{
-                    "Content-type" : "application/json"
-                },
-                body:JSON.stringify(
-                    {
-                        title:title.value,
-                        content: content.value,
-                        tags: tags.value //[]As Array
-                    }
-                )
-            })
-            // redirecting to Home Page
+            
+            let newPost = {
+                 title:title.value,
+                 content: content.value,
+                 tags: tags.value //[]As Array
+            }
+
+            let res =  await db.collection("posts").add(newPost)
+            // console.log(res.id);
             router.push("/");
+            //JSON Server Fetching Code
+
+            // await fetch('http://localhost:3000/posts',{
+            //     method:"POST",
+            //     headers:{
+            //         "Content-type" : "application/json"
+            //     },
+            //     body:JSON.stringify(
+            //         {
+            //             title:title.value,
+            //             content: content.value,
+            //             tags: tags.value //[]As Array
+            //         }
+            //     )
+            // })
+            // // redirecting to Home Page
+            // router.push("/");
         }
 
         return {title,content,tag,tags,enableKeyDown,addPost};

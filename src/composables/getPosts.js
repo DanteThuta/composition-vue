@@ -8,6 +8,7 @@ let getPosts=()=>{
     let load=async()=>{
       try{
 
+      //Fetching Records from Firebase Server
       let res =  await db.collection("posts").get()
       
       //to put Firebase Records into arrays

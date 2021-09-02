@@ -1,5 +1,5 @@
 <template>
-  <h1>Detail - {{id}}</h1>
+  <h1>{{post.title}}</h1>
 
     <div v-if="post" class="post">
         <h2>{{post.title}}</h2>
@@ -21,7 +21,7 @@ export default {
     props: ["id"],
     setup(props){
         let route = useRoute();
-        console.log(route.params.id);
+        // console.log(route.params.id);
         //carrying id from props METHOD
         // let {post,error,load} = getPost(props.id);// require carry id from props
 
